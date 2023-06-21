@@ -1,0 +1,23 @@
+<!-- QUOTES -->
+<!ENTITY ldquo "&#8220;"> <!-- Left Double Quote -->
+<!ENTITY rdquo "&#8221;"> <!-- Right Double Quote -->
+<!ENTITY lsquo "&#8216;"> <!-- Left Single Quote -->
+<!ENTITY rsquo "&#8217;"> <!-- Right Single Quote -->
+
+<!-- WHITESPACE CHARACTERS -->
+<!ENTITY nbsp "&#160;"> <!-- Non-breaking Space -->
+<!ENTITY ensp "&#8194;"> <!-- En Space -->
+<!ENTITY emsp "&#8195;"> <!-- Em Space -->
+<!ENTITY thinsp "&#8201;"> <!-- Thin Space -->
+
+<!-- CURRENCY SYMBOLS -->
+<!ENTITY dollar "&#36;"> <!-- Dollar Symbol ($) -->
+
+<!-- DIVISION SYMBOLS -->
+<!ENTITY sec "&#167;&#160;"> <!-- Section symbol followed by non-breaking space -->
+<!ENTITY secs "&#167;&#167;&#160;"> <!-- Two section symbols followed by non-breaking space -->
+<!ENTITY pilcrow "&#182;"> <!-- Pilcrow (paragraph symbol) -->
+
+<!-- DASHES -->
+<!ENTITY ndash "&#8211;"> <!-- En Dash -->
+<!ENTITY mdash "&#8212;"> <!-- Em Dash -->
