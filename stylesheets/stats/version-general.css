@@ -88,6 +88,7 @@ ins {
   text-decoration:none;
 }
 del {
+  display: none;
   background-color:#ffa0a0;
   text-decoration:line-through;
 }
