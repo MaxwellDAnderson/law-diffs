@@ -6,13 +6,13 @@
 @font-face {
   font-family:"Century-Expanded-Regular";
   src: local("style/fonts/century-expanded-regular.otf"), 
-  url("../fonts/century-expanded-regular.otf");
+  url("../../fonts/century-expanded-regular.otf");
 }
 
 @font-face {
   font-family:"Century-Expanded-Italic";
   src: local("fonts/century-expanded-italic.otf"),
-  url("../fonts/century-expanded-italic.otf");
+  url("../../fonts/century-expanded-italic.otf");
 }
 
 /* Margin Notes - Source: https://kennethfriedman.org/thoughts/2019/marginal-notes/*/
@@ -31,6 +31,11 @@ table {
 }
 td {
   vertical-align:top;
+}
+
+button {
+  position: sticky;
+  top: 0in;
 }
 
 h1, h2, h3, h4, h5, h6 {
