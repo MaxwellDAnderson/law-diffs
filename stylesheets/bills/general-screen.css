@@ -98,7 +98,7 @@ body {
 
 /* Diffs */
 ins {
-  background-color:#a0ffa0;
+  background-color:greenyellow;
   text-decoration:underline;
 }
 del {
