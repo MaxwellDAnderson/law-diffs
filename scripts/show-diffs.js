@@ -3,5 +3,5 @@ $(document).ready(function() {
     $("ins").css("background-color", "#a0ffa0");
     $("ins").css("text-decoration", "underline");
     $("del").css("display", "inline");
-  })
-})
+  });
+});
