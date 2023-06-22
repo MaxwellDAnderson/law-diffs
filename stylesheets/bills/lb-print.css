@@ -9,13 +9,13 @@
 @font-face {
   font-family:"Century-Expanded-Regular";
   src: local("fonts/century-expanded-regular.otf"), 
-  url("../fonts/century-expanded-regular.otf");
+  url("../../fonts/century-expanded-regular.otf");
 }
 
 @font-face {
   font-family:"Century-Expanded-Italic";
   src: local("fonts/century-expanded-italic.otf"),
-  url("../fonts/century-expanded-italic.otf");
+  url("../../fonts/century-expanded-italic.otf");
 }
 aside, .aside {
   display: inline;
@@ -32,6 +32,8 @@ body {
   max-width: 5.5in;
   width: 60%;
   margin: 0 auto;
+  font-family: Century-Expanded-Regular;
+  font-size: 12pt;
 }
 
 table {
