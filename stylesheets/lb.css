@@ -1,0 +1,117 @@
+@font-face {
+  font-family:"Century-Expanded-Regular";
+  src: local("style/fonts/century-expanded-regular.otf"), 
+  url("../../fonts/century-expanded-regular.otf");
+}
+
+@font-face {
+  font-family:"Century-Expanded-Italic";
+  src: local("fonts/century-expanded-italic.otf"),
+  url("../../fonts/century-expanded-italic.otf");
+}
+
+
+/* SCREEN WIDTH < 768 PIXELS */
+@media screen and (max-width: 768px) {
+  aside, .aside {
+    display: block; 	/* forces parent paragraph to break */
+    float: none; 	/* stops content from floating */
+    margin: 5% 10% 5% 10%; 	/* adds indentation on all sides */
+    width: 80%; 	/* forces width of the marginal note */
+    font-size: 8pt; 	/* makes font slightly smaller */
+  }
+}
+
+
+/* SCREEN GENERAL */
+@media screen {
+  aside, .aside { /* works for "aside" tag and class name "aside" */
+    display: inline; /* prevents parent paragraph from breaking */
+    float: right; /* positions the note to the right of the content */
+    position: relative; /* forces note to be relative to its normal position */
+    width: 20vw; /* limits the width of the marginal note */
+    margin-right: -22vw; /* sets the distance away from the body text */
+    font-size: 8pt; /* makes font slightly smaller */
+  }
+
+  body {
+    max-width: 500px; 
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/* PRINT */
+@media print {
+  @page {
+    size: 8.5in 11in portrait;
+    margin-left: 0.5in;
+    margin-right: 0.5in;
+    margin-top: 0.5in;
+    margin-bottom: 0.5in;
+  }
+  aside, .aside {
+    display: inline;
+    float: right;
+    position: relative;
+    width: 1in; /* 4.5 picas */
+    font-size: 6pt;
+    margin-right: -1.25in;
+  }
+
+  body {
+    max-width: 5.5in;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+
+@media screen, print, screen and (max-width: 768px) {
+  body {
+    font-family: Century-Expanded-Regular;
+    font-size: 12pt;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    display: block;
+    font-weight: bold;
+    font-size: 12pt;
+  }
+
+  i, em {font-family: Century-Expanded-Italic;}
+  
+  p.lb {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  p.approved {text-align: center;}
+
+  p.intro, p.title {
+    padding-left: 0.5in;
+    text-indent: -0.5in;
+  }
+
+  p.lvl0 {padding-left: 0in;}
+  p.lvl1 {padding-left: 0.25in;}
+  p.lvl2 {padding-left: 0.5in;}
+  p.lvl3 {padding-left: 0.75in;}
+  .sc {font-variant: small-caps;}
+  details > summary {font-family: Century-Expanded-Italic;}
+  details > p {
+    font-size: 9pt;
+    margin-left: 0.25in;
+    margin-right: 0.25in;
+    text-indent: 0.15in;
+  }
+
+  /* LB INS/DEL */
+  ins {
+    background-color: yellowgreen;
+    text-decoration: underline;
+  }
+  del {
+    background-color: pink;
+    text-decoration: line-through;
+  }
+}
