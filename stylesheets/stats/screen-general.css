@@ -1,0 +1,127 @@
+
+/*
+
+*/
+
+@font-face {
+  font-family:"Century-Expanded-Regular";
+  src: local("style/fonts/century-expanded-regular.otf"), 
+  url("../../fonts/century-expanded-regular.otf");
+}
+
+@font-face {
+  font-family:"Century-Expanded-Italic";
+  src: local("fonts/century-expanded-italic.otf"),
+  url("../../fonts/century-expanded-italic.otf");
+}
+
+/* Margin Notes - Source: https://kennethfriedman.org/thoughts/2019/marginal-notes/*/
+aside, .aside { /* works for "aside" tag and class name "aside" */
+  display: inline; /* prevents parent paragraph from breaking */
+  float: right; /* positions the note to the right of the content */
+  position: relative; /* forces note to be relative to its normal position */
+  width: 20vw; /* limits the width of the marginal note */
+  margin-right: -22vw; /* sets the distance away from the body text */
+  font-size: 8pt; /* makes font slightly smaller */
+}
+
+table {
+  table-layout:fixed;
+  width:100%;
+}
+td {
+  vertical-align:top;
+}
+
+button {
+  position: sticky;
+  top: 0in;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+p.lb {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p.approved {
+  text-align: center;
+}
+
+p.intro, p.title {
+  padding-left: 0.5in;
+  text-indent: -0.5in;
+}
+
+p.lvl0 {
+  padding-left: 0in;
+}
+
+p.lvl1 {
+  padding-left: 0.25in;
+}
+
+p.lvl2 {
+  padding-left: 0.5in;
+}
+
+p.lvl3 {
+  padding-left: 0.75in;
+}
+
+details > summary {
+  font-family: Century-Expanded-Italic;
+}
+details > p {
+  font-size: 9pt;
+
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  text-indent: 0.15in;
+}
+
+i {
+  font-family: Century-Expanded-Italic;
+}
+
+.sc {
+  font-variant:small-caps;
+}
+
+body {
+  max-width: 500px; /*provides maximum, in case screen is huge*/
+  width: 60%; /*keeps body text width reasonable*/
+  margin: 0 auto; /*centers main on page*/
+  font-family: Century-Expanded-Regular;
+
+}
+
+/* Diffs */
+ins {
+  background-color: white;
+  text-decoration:none;
+}
+del {
+  display: none;
+  background-color:pink;
+  text-decoration:line-through;
+}
+.moved_from {
+  text-decoration-style:double;
+  text-decoration-line:line-through;
+  background-color:#FCFBB7
+}
+.moved_to {
+  text-decoration-style:double;
+  text-decoration-line:underline;
+  background-color:#FCFBB7
+}
+
+
+
+

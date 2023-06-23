@@ -1,0 +1,10 @@
+/* applies when screen width is under 768 */
+aside, .aside { 	/* works for "aside" tag and class name "aside" */
+  display: block; 	/* forces parent paragraph to break */
+  float: none; 	/* stops content from floating */
+  margin: 5% 10% 5% 10%; 	/* adds indentation on all sides */
+  width: 80%; 	/* forces width of the marginal note */
+  font-size: 8pt; 	/* makes font slightly smaller */
+}
+
+

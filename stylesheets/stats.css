@@ -11,6 +11,18 @@
 }
 
 @media screen, print, screen and (max-width: 768px) {
+  @font-face {
+    font-family:"Century-Expanded-Regular";
+    src: local("style/fonts/century-expanded-regular.otf"), 
+    url("../../fonts/century-expanded-regular.otf");
+  }
+  
+  @font-face {
+    font-family:"Century-Expanded-Italic";
+    src: local("fonts/century-expanded-italic.otf"),
+    url("../../fonts/century-expanded-italic.otf");
+  }
+  
   body {
     font-family: Century-Expanded-Regular;
     font-size: 12pt;
