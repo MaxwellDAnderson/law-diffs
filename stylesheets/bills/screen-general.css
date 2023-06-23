@@ -15,6 +15,11 @@
   url("../../fonts/century-expanded-italic.otf");
 }
 
+@font-face {
+  font-family: "Century-Expanded-Bold";
+  src: url("../../fonts/century-expanded-bold.otf");
+}
+
 /* Margin Notes - Source: https://kennethfriedman.org/thoughts/2019/marginal-notes/*/
 aside, .aside { /* works for "aside" tag and class name "aside" */
   display: inline; /* prevents parent paragraph from breaking */
@@ -40,7 +45,7 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
-  font-weight: bold;
+  font-family: Century-Expanded-Bold;
   font-size: 12pt;
 }
 

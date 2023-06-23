@@ -17,6 +17,11 @@
   src: local("fonts/century-expanded-italic.otf"),
   url("../../fonts/century-expanded-italic.otf");
 }
+
+@font-face {
+  font-family: "Century-Expanded-Bold";
+  src: url("../../fonts/century-expanded-bold.otf");
+}
 aside, .aside {
   display: inline;
   float: right;
@@ -51,7 +56,7 @@ td {
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
-  font-weight: bold;
+  font-family: Century-Expanded-Bold;
   font-size: 12pt;
 }
 
