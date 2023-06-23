@@ -1,4 +1,7 @@
 # Law Diffs
+
+Live at [maxwelldanderson.github.io/law-diffs/index.html](maxwelldanderson.github.io/law-diffs/index.html)
+
 A repo of selected laws with diffs visible.
 
 Two types of stylesheets: (1) bills and (2) stats.
