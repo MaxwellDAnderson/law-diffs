@@ -10,6 +10,54 @@
   url("../../fonts/century-expanded-italic.otf");
 }
 
+@media screen, print, screen and (max-width: 768px) {
+  body {
+    font-family: Century-Expanded-Regular;
+    font-size: 12pt;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    display: block;
+    font-weight: bold;
+    font-size: 12pt;
+  }
+
+  i, em {font-family: Century-Expanded-Italic;}
+  
+  p.lb {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  p.approved {text-align: center;}
+
+  p.intro, p.title {
+    padding-left: 0.5in;
+    text-indent: -0.5in;
+  }
+
+  p.lvl0 {padding-left: 0in;}
+  p.lvl1 {padding-left: 0.25in;}
+  p.lvl2 {padding-left: 0.5in;}
+  p.lvl3 {padding-left: 0.75in;}
+  .sc {font-variant: small-caps;}
+  details > summary {font-family: Century-Expanded-Italic;}
+  details > p {
+    font-size: 9pt;
+    margin-left: 0.25in;
+    margin-right: 0.25in;
+    text-indent: 0.15in;
+  }
+
+  /* LB INS/DEL */
+  ins {
+    background-color: yellowgreen;
+    text-decoration: underline;
+  }
+  del {
+    background-color: pink;
+    text-decoration: line-through;
+  }
+}
 
 /* SCREEN WIDTH < 768 PIXELS */
 @media screen and (max-width: 768px) {
@@ -67,51 +115,3 @@
 }
 
 
-@media screen, print, screen and (max-width: 768px) {
-  body {
-    font-family: Century-Expanded-Regular;
-    font-size: 12pt;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    display: block;
-    font-weight: bold;
-    font-size: 12pt;
-  }
-
-  i, em {font-family: Century-Expanded-Italic;}
-  
-  p.lb {
-    text-align: center;
-    text-transform: uppercase;
-  }
-  p.approved {text-align: center;}
-
-  p.intro, p.title {
-    padding-left: 0.5in;
-    text-indent: -0.5in;
-  }
-
-  p.lvl0 {padding-left: 0in;}
-  p.lvl1 {padding-left: 0.25in;}
-  p.lvl2 {padding-left: 0.5in;}
-  p.lvl3 {padding-left: 0.75in;}
-  .sc {font-variant: small-caps;}
-  details > summary {font-family: Century-Expanded-Italic;}
-  details > p {
-    font-size: 9pt;
-    margin-left: 0.25in;
-    margin-right: 0.25in;
-    text-indent: 0.15in;
-  }
-
-  /* LB INS/DEL */
-  ins {
-    background-color: yellowgreen;
-    text-decoration: underline;
-  }
-  del {
-    background-color: pink;
-    text-decoration: line-through;
-  }
-}
