@@ -108,11 +108,11 @@ body {
 
 /* Diffs */
 ins {
-  background-color:greenyellow;
+  background-color:#a0ffa0;
   text-decoration:underline;
 }
 del {
-  background-color:#ffa0a0;
+  background-color:pink;
   text-decoration:line-through;
 }
 .moved_from {
