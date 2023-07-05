@@ -79,6 +79,10 @@ p.lvl3 {
   padding-left: 0.75in;
 }
 
+sup {
+  font-size: 10pt;
+}
+
 details > summary {
   font-family: Century-Expanded-Italic;
 }
