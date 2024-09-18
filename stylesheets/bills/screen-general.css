@@ -30,17 +30,28 @@ aside, .aside { /* works for "aside" tag and class name "aside" */
   font-size: 8pt; /* makes font slightly smaller */
 }
 
-table {
-  table-layout:fixed;
-  width:100%;
-}
-td {
-  vertical-align:top;
+body {
+  max-width: 500px; /*provides maximum, in case screen is huge*/
+  width: 60%; /*keeps body text width reasonable*/
+  margin: 0 auto; /*centers main on page*/
+  font-family: Century-Expanded-Regular;
+  text-align: justify;
 }
 
 button {
   position: sticky;
   top: 0in;
+}
+
+details > summary {
+  font-family: Century-Expanded-Italic;
+}
+
+details > p {
+  font-size: 9pt;
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  text-indent: 0.15in;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,13 +60,36 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12pt;
 }
 
-p.lb {
+
+body.lb > header > p.approved {
+  text-align: center;
+}
+
+body.lb > header.oldStyle > .printRef {
+  text-align: center;
+}
+body.lb > header.oldStyle > .chapter,
+header.oldStyle > .billDescription {
   text-align: center;
   text-transform: uppercase;
 }
 
-p.approved {
-  text-align: center;
+body.lb > header.oldStyle > .lb {
+  font-family: Century-Expanded-Bold;
+  text-transform: none;
+}
+
+body.lb > header.oldStyle > .intro {
+  text-transform: uppercase;
+}
+
+body.lb > main > p.approved {
+  text-indent: 0.25in;
+}
+
+p.enactingFormula {
+  font-family: Century-Expanded-Italic;
+  font-style: italic;
 }
 
 p.intro, p.title {
@@ -63,8 +97,28 @@ p.intro, p.title {
   text-indent: -0.5in;
 }
 
+p.lb {
+  text-align: center;
+  text-transform: uppercase;
+}
+
 p.lvl0 {
   padding-left: 0in;
+}
+
+p.firstLineIndent {
+  padding-left: 0in;
+  text-indent: 0.25in;
+}
+
+p.chapeau {
+  padding-left: 0.0in;
+  text-indent: 0.25in;
+}
+
+p.content {
+  padding-left: 0.25in;
+  text-indent: 0.25in;
 }
 
 p.lvl1 {
@@ -83,32 +137,15 @@ sup {
   font-size: 10pt;
 }
 
-details > summary {
-  font-family: Century-Expanded-Italic;
-}
-details > p {
-  font-size: 9pt;
 
-  margin-left: 0.25in;
-  margin-right: 0.25in;
-  text-indent: 0.15in;
-}
 
-i {
+i, em {
   font-family: Century-Expanded-Italic;
 }
 
-.sc {
-  font-variant:small-caps;
-}
 
-body {
-  max-width: 500px; /*provides maximum, in case screen is huge*/
-  width: 60%; /*keeps body text width reasonable*/
-  margin: 0 auto; /*centers main on page*/
-  font-family: Century-Expanded-Regular;
 
-}
+
 
 /* Diffs */
 ins {
@@ -130,6 +167,38 @@ del {
   background-color:#FCFBB7
 }
 
+
+
+
+
+.printRef::before {
+  content: "[";
+}
+.printRef::after {
+  content: "]";
+}
+
+.sc {
+  font-variant:small-caps;
+}
+
+.starPage {
+  font-family: Century-Expanded-Bold;
+  font-weight: strong;
+  background-color: yellow;
+}
+
+.starPage::before {
+  content: "\002A"
+}
+
+table {
+  table-layout:fixed;
+  width:100%;
+}
+td {
+  vertical-align:top;
+}
 
 
 

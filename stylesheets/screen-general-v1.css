@@ -1,0 +1,330 @@
+@font-face {
+  font-family:"Century-Expanded-Regular";
+  src: local("Century-Expanded-Regular"),
+  url("../../templates/fonts/century-expanded-regular.otf")
+}
+@font-face {
+  font-family: "Century-Expanded-Italic";
+  src: local("Century-Expanded-Italic"),
+  url("../../templates/fonts/century-expanded-italic.otf")
+}
+@font-face {
+  font-family: "Century-Expanded-Bold";
+  src: url("../../templates/fonts/century-expanded-bold.otf")
+}
+
+
+/* Margin Notes - Source: https://kennethfriedman.org/thoughts/2019/marginal-notes/ */
+aside, .aside { /* works for "aside" tage and class "aside" */
+  display: inline; /* prevents parent paragraph from breaking */
+  float: right; /* positions the note to the right of the content */
+  position: relative; /* forces note to be relative to its normal position */
+  width: 20vw; /* limits the width of the marginal note */
+  margin-right: -22vw; /* sets the distance away from the body text */
+  font-size: 8pt; /* makes font slightly smaller */
+}
+
+body {
+  max-width: 500px; /* provides maximum, in case screen is huge */
+  width: 60%; /* keeps body text width reasonable */
+  margin: 0 auto; /* centers body on page */
+  font-family: Century-Expanded-Regular;
+  text-align: justify;
+}
+
+button {
+  position: sticky;
+  top: 0in;
+}
+
+details > summary {
+  font-family: Century-Expanded-Italic;
+}
+
+details > p {
+  font-size: 9pt;
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  text-indent: 0.15in;
+}
+
+dfn {
+  font-family: Century-Expanded-Regular;
+  font-style: normal;
+}
+
+i, em {
+  font-family: Century-Expanded-Italic;
+  font-style: normal;
+}
+
+
+/* DIFFS */
+body.LegislativeBill ins {
+  background-color: #a0ffa0;
+  text-decoration: underline;
+}
+body.LegislativeBill del {
+  background-color: pink;
+  text-decoration: line-through;
+}
+body.CodifiedStatute ins {
+  background-color: white;
+  text-decoration: none;
+}
+body.CodifiedStatute del {
+  display: none;
+  background-color: pink;
+  text-decoration: line-through;
+}
+.moved-from {
+  text-decoration-style: double;
+  text-decoration-line: line-through;
+  background-color: #FCFBB7;
+}
+.moved-to {
+  text-decoration-style: double;
+  text-decoration-line: underline;
+  background-color: #FCFBB7;
+}
+
+
+
+/* DESIGNATOR LABELS AND VALUES */
+
+.designator-label {
+  display: inline;
+}
+
+.designator-value {
+  display: inline;
+}
+
+body.LegislativeBill > main > section > p > span.designator-value::after {
+  content: ".";
+}
+
+
+/* COUNTERS */
+
+
+@counter-style decimal-paren {
+  system: numeric;
+  symbols: '\30' '\31' '\32' '\33' '\34' '\35' '\36' '\37' '\38' '\39';
+  prefix: "(";
+  suffix: ") ";
+  /* symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9'; */
+}
+@counter-style lower-alpha-paren {
+  system: alphabetic;
+  symbols: '\61' '\62' '\63' '\64' '\65' '\66' '\67' '\68' '\69' '\6A' '\6B' '\6C' '\6D' '\6E' '\6F' '\70' '\71' '\72' '\73' '\74' '\75' '\76' '\77' '\78' '\79' '\7A';
+  prefix: "(";
+  suffix: ") ";
+  /* symbols: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'; */
+}
+@counter-style lower-roman-paren {
+  system: additive;
+  range: 1 3999;
+  additive-symbols: 1000 '\6D', 900 '\63\6D', 500 '\64', 400 '\63\64', 100 '\63', 90 '\78\63', 50 '\6C', 40 '\78\6C', 10 '\78', 9 '\69\78', 5 '\76', 4 '\69\76', 1 '\69';
+  prefix: "(";
+  suffix: ") ";
+  /* additive-symbols: 1000 'm', 900 'cm', 500 'd', 400 'cd', 100 'c', 90 'xc', 50 'l', 40 'xl', 10 'x', 9 'ix', 5 'v', 4 'iv', 1 'i'; */
+}
+@counter-style upper-roman-paren {
+  system: additive;
+  range: 1 3999;
+  prefix: "(";
+  suffix: ") ";
+  additive-symbols: 1000 '\4D', 900 '\43\4D', 500 '\44', 400 '\43\44', 100 '\43', 90 '\58\43', 50 '\4C', 40 '\58\4C', 10 '\58', 9 '\49\58', 5 '\56', 4 '\49\56', 1 '\49';
+  /* additive-symbols: 1000 'M', 900 'CM', 500 'D', 400 'CD', 100 'C', 90 'XC', 50 'L', 40 'XL', 10 'X', 9 'IX', 5 'V', 4 'IV', 1 'I'; */
+}
+  
+
+section {
+  counter-reset: list-lvl-1;
+}
+ol.enum-block {
+  counter-reset: list-lvl-2;
+  padding-inline-start: 0in;
+}
+li {
+  list-style-type: none;
+  text-indent: 0.25in;
+}
+
+ol.enum-block > li::before {
+  content: "("counter(list-lvl-1, decimal-paren)") ";
+  counter-increment: list-lvl-1;
+}
+
+ol.enum-block > li > ol.enum-block {
+  padding-left: 0.25in;
+  counter-reset: list-lvl-3;
+}
+
+ol.enum-block > li > ol.enum-block > li::before {
+  content: "("counter(list-lvl-2, lower-alpha-paren)") ";
+  counter-increment: list-lvl-2;
+}
+
+ol.enum-block > li > ol.enum-block > li > ol.enum-block {
+  padding-left: 0.25in;
+}
+ol.enum-block > li > ol.enum-block > li > ol.enum-block > li::before {
+  content: "("counter(list-lvl-3, lower-roman-paren)") ";
+  counter-increment: list-lvl-3;
+}
+
+/* 
+
+  PARAGRAPH ELEMENTS
+
+*/
+
+/* 
+  LEGISLATIVE BILLS
+*/
+
+body.LegislativeBill > main p.enactingFormula {
+  text-indent: 0.0in;
+}
+
+body.LegislativeBill > main p {
+  text-indent: 0.25in;
+}
+
+/* HEADER STYLES */
+
+/* Old Header */
+body.LegislativeBill > header.era0 > p.chapter, /* Old session laws were divided into "chapters" */
+body.LegislativeBill > header.era0 > p.billDescription { /* Old session laws contained a brief description of the bill */
+  text-align: center;
+  text-transform: uppercase;
+}
+/* Identifies the Legislative Bill Number */
+/* Formerly .lb */
+body.LegislativeBill > header.era0 > p.billNumber {
+  font-family: Century-Expanded-Bold;
+  text-transform: none;
+  text-align: center;
+}
+/* Names of who introduced the Legislative Bill */
+/* Formerly .intro */
+body.LegislativeBill > header.era0 > p.introducedBy {
+  text-transform: uppercase;
+}
+
+body.LegislativeBill > header.era0 > p.billTitle {
+  padding-left: 0.5in;
+  text-indent: -0.5in;
+}
+
+/* era0 <main> */
+body.LegislativeBill > main.era0 > p.enactingFormula {
+  font-family: Century-Expanded-Italic;
+}
+
+/* era1 <header> */
+body.LegislativeBill > header.era1 > p.billNumber {
+  font-family: Century-Expanded-Bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+body.LegislativeBill > header.era1 > p.approved {
+  text-align: center;
+}
+body.LegislativeBill > header.era1 > p.introducedBy {
+  padding-left: 0.5in;
+  text-indent: -0.5in;
+}
+body.LegislativeBill > header.era1 > p.billTitle {
+  padding-left: 0.5in;
+  text-indent: -0.5in;
+}
+
+/* era1 <main> */
+
+body.LegislativeBill > main.era1 > p.enactingFormula {
+  font-family: Century-Expanded-Regular;
+}
+
+body.StatutoryCodification > header > p.version-number,
+body.StatutoryCodification > header > p.amended-through,
+body.StatutoryCodification > header > p.effective-date {
+  text-align: center;
+}
+body.StatutoryCodification > header > p.version-number::before,
+body.StatutoryCodification > header > p.amended-through::before,
+body.StatutoryCodification > header > p.effective-date::before {
+  content: "[";
+}
+body.StatutoryCodification > header > p.version-number::after,
+body.StatutoryCodification > header > p.amended-through::after,
+body.StatutoryCodification > header > p.effective-date::after {
+  content: "]";
+}
+body.StatutoryCodification > main p {
+  text-indent: 0.25in;
+}
+
+
+
+cite {
+  font-family: Century-Expanded-Regular;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-family: Century-Expanded-Bold;
+  font-size: 12pt;
+}
+
+nav ul,
+nav ol {
+  display: inline-block;
+  list-style-type: none;
+  padding-left: 0in;
+}
+nav li {
+  display: inline-block;
+}
+
+p.chapeau {
+  text-indent: 0.25in;
+}
+
+p.printRef {
+  text-align: center;
+}
+p.printRef::before {
+  content: "[";
+}
+p.printRef::after {
+  content: "]";
+}
+
+section > h1 > span.designator::after {
+  content: ".";
+}
+
+.starPage {
+  font-family: Century-Expanded-Bold;
+}
+.starPage::before {
+  content: "\002A";
+}
+
+sup {
+  font-size: 10pt;
+}
+
+
+/* TABLE */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+td {
+  vertical-align: top;
+}

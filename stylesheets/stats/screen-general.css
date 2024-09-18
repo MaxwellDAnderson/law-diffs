@@ -38,6 +38,30 @@ td {
   vertical-align:top;
 }
 
+.lede {
+  padding-left: 0.25in;
+}
+
+
+enumeration-set {
+  display: block;
+  list-style-type: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px
+}
+enumeration-set enumeration-item {
+  display: list-item;
+  
+}
+
+cite {
+  font-family: Century-Expanded-Regular;
+  font-style: normal;
+}
+
 button {
   position: sticky;
   top: 0in;
@@ -77,6 +101,10 @@ p.lvl2 {
 
 p.lvl3 {
   padding-left: 0.75in;
+}
+
+section > h1 > span.designator::after {
+  content:".";
 }
 
 sup {
